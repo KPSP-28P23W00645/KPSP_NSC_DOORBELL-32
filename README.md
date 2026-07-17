@@ -33,8 +33,11 @@
 
 ## การอนุญาตสิทธิ์การใช้งาน
 
-*   **ซอฟต์แวร์ (Software License):** ซอร์สโค้ดและซอฟต์แวร์ทั้งหมดในคลังนี้ได้รับการเผยแพร่ภายใต้สัญญาอนุญาต **[GNU Lesser General Public License v2.1 (LGPL-2.1)](LICENSE)**
-*   **ฮาร์ดแวร์ (Hardware License):** แผนผังวงจร ลายบอร์ด PCB และเอกสารการออกแบบ ได้รับการเผยแพร่ภายใต้สัญญาอนุญาต **[Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)**
+โครงการนี้สนับสนุนแนวทาง Open Source อย่างเต็มรูปแบบ โดยแบ่งแยกสัญญาอนุญาตการใช้งานตามประเภทของผลงานอย่างชัดเจน ดังนี้:
+
+* **Software, Firmware & AI:** เผยแพร่ภายใต้ [GNU Lesser General Public License v2.1 (LGPL-2.1)](LICENSE-SOFTWARE-FIRMWARE-CIRA_AI)
+* **Hardware (Schematics, PCB Layout):** เผยแพร่ภายใต้ [CERN Open Hardware Licence Version 2 - Weakly Reciprocal (CERN-OHL-W-2.0)](LICENSE-HARDWARE)
+* **Documentation:** เผยแพร่ภายใต้ [Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA-4.0)](LICENSE-DOCS)
 
 ---
 

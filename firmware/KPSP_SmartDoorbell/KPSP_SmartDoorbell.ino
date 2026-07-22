@@ -11,8 +11,8 @@
 // PIN DEFINITIONS 
 // ==========================================
 #define PIR_PIN         14
-#define SOLENOID_PIN    13
-#define BUZZER_LED_PIN  4
+#define SOLENOID_PIN    4
+#define BUZZER_LED_PIN  13
 
 // Microphone Pins (From Schematic)
 #define MIC_I2S_SD      2
@@ -188,6 +188,9 @@ static esp_err_t audio_handler(httpd_req_t *req) {
 static esp_err_t open_handler(httpd_req_t *req) {
   Serial.println("[App Command] OPEN Door Lock request received.");
   
+  httpd_resp_set_hdr(req, "Access-Control-Allow-Origin", "*");
+  httpd_resp_send(req, "Door Opened", -1);
+
   // Play a quick success chirp on the buzzer
   tone(BUZZER_LED_PIN, 2000, 100);
   delay(120);
@@ -197,10 +200,7 @@ static esp_err_t open_handler(httpd_req_t *req) {
   digitalWrite(SOLENOID_PIN, HIGH);
   delay(3000); 
   digitalWrite(SOLENOID_PIN, LOW);
-  
-  // Send confirmation back to Kodular
-  httpd_resp_set_hdr(req, "Access-Control-Allow-Origin", "*");
-  httpd_resp_send(req, "Door Opened", -1); // Matches "Door Opened" block check
+
   return ESP_OK;
 }
 
@@ -234,7 +234,7 @@ void setupCamera() {
   if (psramFound()) {
     config.frame_size = FRAMESIZE_VGA; 
     config.jpeg_quality = 12;
-    config.fb_count = 1;
+    config.fb_count = 2;
   } else {
     config.frame_size = FRAMESIZE_QVGA; 
     config.jpeg_quality = 12;

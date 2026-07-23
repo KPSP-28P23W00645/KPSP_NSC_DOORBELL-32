@@ -1,0 +1,1394 @@
+[{
+ "categoryString": "EXTENSION",
+ "dateBuilt": "2025-10-04T19:38:00+0200",
+ "nonVisible": "true",
+ "iconName": "aiwebres/iconchannel.png",
+ "methods": [
+  {
+   "deprecated": "false",
+   "name": "AppIsAlreadyRunning",
+   "description": "Checks if another instance of this app is already running.",
+   "params": [],
+   "returnType": "boolean"
+  },
+  {
+   "deprecated": "false",
+   "name": "Cancel",
+   "description": "Cancels a Notification based on numberID",
+   "params": [{
+    "name": "NumberID",
+    "type": "number"
+   }]
+  },
+  {
+   "deprecated": "false",
+   "name": "CancelAlarm",
+   "description": "Cancels the given alarm.",
+   "params": [{
+    "name": "RequestCode",
+    "type": "number"
+   }]
+  },
+  {
+   "deprecated": "false",
+   "name": "CancelAll",
+   "description": "Cancels All Notifications",
+   "params": []
+  },
+  {
+   "deprecated": "false",
+   "name": "CloseSystemDialogs",
+   "description": "Closes the notification panel.",
+   "params": []
+  },
+  {
+   "deprecated": "false",
+   "name": "CreateActionNotification",
+   "description": "Creates a Notification",
+   "params": [
+    {
+     "name": "NumberID",
+     "type": "number"
+    },
+    {
+     "name": "Icon",
+     "type": "text"
+    },
+    {
+     "name": "Title",
+     "type": "text"
+    },
+    {
+     "name": "Text",
+     "type": "text"
+    },
+    {
+     "name": "UrsIntentObject",
+     "type": "component"
+    }
+   ]
+  },
+  {
+   "deprecated": "false",
+   "name": "CreateAiNotification",
+   "description": "Creates a Notification",
+   "params": [
+    {
+     "name": "NumberID",
+     "type": "number"
+    },
+    {
+     "name": "Icon",
+     "type": "text"
+    },
+    {
+     "name": "Title",
+     "type": "text"
+    },
+    {
+     "name": "Text",
+     "type": "text"
+    },
+    {
+     "name": "ScreenToOpen",
+     "type": "text"
+    },
+    {
+     "name": "StartValue",
+     "type": "text"
+    },
+    {
+     "name": "AutoCancel",
+     "type": "boolean"
+    }
+   ]
+  },
+  {
+   "deprecated": "false",
+   "name": "CreateAlarm",
+   "description": "Creates a notification alarm",
+   "params": [
+    {
+     "name": "RequestCode",
+     "type": "number"
+    },
+    {
+     "name": "Delay",
+     "type": "number"
+    },
+    {
+     "name": "Type",
+     "type": "number"
+    },
+    {
+     "name": "WakeUp",
+     "type": "boolean"
+    },
+    {
+     "name": "UrsNotificationObject",
+     "type": "component"
+    },
+    {
+     "name": "UrsIntentObject",
+     "type": "component"
+    }
+   ]
+  },
+  {
+   "deprecated": "false",
+   "name": "CreateAlarmAt",
+   "description": "Creates a notification alarm",
+   "params": [
+    {
+     "name": "RequestCode",
+     "type": "number"
+    },
+    {
+     "name": "Millis",
+     "type": "number"
+    },
+    {
+     "name": "Type",
+     "type": "number"
+    },
+    {
+     "name": "WakeUp",
+     "type": "boolean"
+    },
+    {
+     "name": "UrsNotificationObject",
+     "type": "component"
+    },
+    {
+     "name": "UrsIntentObject",
+     "type": "component"
+    }
+   ]
+  },
+  {
+   "deprecated": "false",
+   "name": "CreateAlarmEx",
+   "description": "Creates a notification alarm",
+   "params": [
+    {
+     "name": "RequestCode",
+     "type": "number"
+    },
+    {
+     "name": "Delay",
+     "type": "number"
+    },
+    {
+     "name": "Type",
+     "type": "number"
+    },
+    {
+     "name": "WakeUp",
+     "type": "boolean"
+    },
+    {
+     "name": "UrsNotificationObject",
+     "type": "component"
+    },
+    {
+     "name": "UrsIntentObject",
+     "type": "component"
+    }
+   ],
+   "returnType": "number"
+  },
+  {
+   "deprecated": "false",
+   "name": "CreateNotification",
+   "description": "Creates a Notification",
+   "params": [
+    {
+     "name": "UrsNotificationObject",
+     "type": "component"
+    },
+    {
+     "name": "UrsIntentObject",
+     "type": "component"
+    }
+   ]
+  },
+  {
+   "deprecated": "false",
+   "name": "CreateProgressNotification",
+   "description": "Creates a notification alarm",
+   "params": [
+    {
+     "name": "CurrentProgress",
+     "type": "number"
+    },
+    {
+     "name": "MaxProgress",
+     "type": "number"
+    },
+    {
+     "name": "Indeterminate",
+     "type": "boolean"
+    },
+    {
+     "name": "UrsNotificationObject",
+     "type": "component"
+    },
+    {
+     "name": "UrsIntentObject",
+     "type": "component"
+    }
+   ]
+  },
+  {
+   "deprecated": "false",
+   "name": "CreateSimpleNotification",
+   "description": "Creates a Notification",
+   "params": [
+    {
+     "name": "NumberID",
+     "type": "number"
+    },
+    {
+     "name": "Icon",
+     "type": "text"
+    },
+    {
+     "name": "Title",
+     "type": "text"
+    },
+    {
+     "name": "Text",
+     "type": "text"
+    }
+   ]
+  },
+  {
+   "deprecated": "false",
+   "name": "GetActiveNotifications",
+   "description": "Reteurns a list of all active notification IDs.",
+   "params": [],
+   "returnType": "list"
+  },
+  {
+   "deprecated": "false",
+   "name": "HideChannel",
+   "description": "Hides the given notification channel.",
+   "params": [{
+    "name": "ChannelID",
+    "type": "text"
+   }]
+  },
+  {
+   "deprecated": "false",
+   "name": "MoveOtherAppToFront",
+   "description": "Moves an already running instance of the app to the front.",
+   "params": []
+  },
+  {
+   "deprecated": "false",
+   "name": "OpenHomeScreen",
+   "description": "Open Home Screen.",
+   "params": []
+  },
+  {
+   "deprecated": "false",
+   "name": "OpenNotificationPanel",
+   "description": "Opens the notification panel.",
+   "params": []
+  },
+  {
+   "deprecated": "false",
+   "name": "OpenNotificationSettings",
+   "description": "Opens the notification channel settings.",
+   "params": []
+  },
+  {
+   "deprecated": "false",
+   "name": "RequestNotificationPermission",
+   "description": "Requests the permission to post notifications.",
+   "params": []
+  },
+  {
+   "deprecated": "false",
+   "name": "SortSimpleList",
+   "description": "Sorts a simple list in ascending or descending.",
+   "params": [
+    {
+     "name": "List",
+     "type": "list"
+    },
+    {
+     "name": "Ascending",
+     "type": "boolean"
+    }
+   ],
+   "returnType": "list"
+  }
+ ],
+ "blockProperties": [
+  {
+   "rw": "read-only",
+   "deprecated": "false",
+   "name": "AreNotificationsEnabled",
+   "description": "Returns whether notifications are enabled for this app.",
+   "type": "boolean",
+   "category": "Unspecified"
+  },
+  {
+   "rw": "read-only",
+   "deprecated": "false",
+   "name": "AreNotificationsPaused",
+   "description": "Returns whether notifications are paused for this app.",
+   "type": "boolean",
+   "category": "Unspecified"
+  },
+  {
+   "rw": "invisible",
+   "alwaysSend": true,
+   "defaultValue": "False",
+   "deprecated": "false",
+   "name": "BypassDnd",
+   "description": "Notifications posted to this channel can interrupt the user in NotificationManager.INTERRUPTION_FILTER_PRIORITY mode",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "invisible",
+   "alwaysSend": true,
+   "defaultValue": "UrsNotificationChannel",
+   "deprecated": "false",
+   "name": "ChannelID",
+   "description": "Sets the id of the channel. Must be unique per package. The value may be truncated if it is too long.",
+   "type": "text",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "alwaysSend": true,
+   "defaultValue": "Urs Notification Channel",
+   "deprecated": "false",
+   "name": "ChannelName",
+   "description": "The the user visible name of this channel.",
+   "type": "text",
+   "category": "Appearance"
+  },
+  {
+   "rw": "read-write",
+   "alwaysSend": true,
+   "defaultValue": "",
+   "deprecated": "false",
+   "name": "Description",
+   "description": "The user visible description of this channel.",
+   "type": "text",
+   "category": "Appearance"
+  },
+  {
+   "rw": "read-only",
+   "deprecated": "false",
+   "name": "HasPostPermission",
+   "description": "Returns wether the App can post notifications.",
+   "type": "boolean",
+   "category": "Unspecified"
+  },
+  {
+   "rw": "invisible",
+   "alwaysSend": true,
+   "defaultValue": "default",
+   "deprecated": "false",
+   "name": "Importance",
+   "description": "The level of interruption of this notification channel.",
+   "type": "text",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-only",
+   "deprecated": "false",
+   "name": "IsRunningInCompanion",
+   "description": "Returns wether the app is running in the companion.",
+   "type": "boolean",
+   "category": "Unspecified"
+  },
+  {
+   "rw": "invisible",
+   "alwaysSend": true,
+   "defaultValue": "&H00000000",
+   "deprecated": "false",
+   "name": "LightColor",
+   "description": "Sets the notification light color for notifications posted to this channel, if lights are enabled on this channel and the device supports that feature.",
+   "type": "number",
+   "category": "Behavior"
+  },
+  {
+   "rw": "invisible",
+   "alwaysSend": true,
+   "defaultValue": "False",
+   "deprecated": "false",
+   "name": "LightEnabled",
+   "description": "Sets whether notifications posted to this channel should display notification lights, on devices that support that feature.",
+   "type": "boolean",
+   "category": "Appearance"
+  },
+  {
+   "rw": "invisible",
+   "alwaysSend": true,
+   "defaultValue": "none",
+   "deprecated": "false",
+   "name": "LockscreenVisibility",
+   "description": "Sets whether notifications posted to this channel appear on the lockscreen or not, and if so, whether they appear in a redacted form.",
+   "type": "text",
+   "category": "Behavior"
+  },
+  {
+   "rw": "invisible",
+   "alwaysSend": true,
+   "defaultValue": "False",
+   "deprecated": "false",
+   "name": "ShowBadge",
+   "description": "Sets whether notifications posted to this channel can appear as application icon badges in a Launcher.",
+   "type": "boolean",
+   "category": "Appearance"
+  },
+  {
+   "rw": "invisible",
+   "alwaysSend": true,
+   "defaultValue": "False",
+   "deprecated": "false",
+   "name": "SoundEnabled",
+   "description": "Sets whether notifications posted to this channel should play the default sound.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-only",
+   "deprecated": "false",
+   "name": "Version",
+   "description": "Returns the component's version name.",
+   "type": "text",
+   "category": "Unspecified"
+  },
+  {
+   "rw": "read-only",
+   "deprecated": "false",
+   "name": "VersionSDK",
+   "description": "The SDK version of the software currently running on this hardware device.",
+   "type": "number",
+   "category": "Unspecified"
+  },
+  {
+   "rw": "invisible",
+   "alwaysSend": true,
+   "defaultValue": "False",
+   "deprecated": "false",
+   "name": "VibrationEnabled",
+   "description": "Sets whether notification posted to this channel should vibrate.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "invisible",
+   "deprecated": "false",
+   "name": "VibrationPattern",
+   "description": "Sets the vibration pattern for notifications posted to this channel.",
+   "type": "text",
+   "category": "Behavior"
+  }
+ ],
+ "helpUrl": "https://UllisRoboterSeite.de/android-AI2-notifier.html",
+ "licenseName": "",
+ "type": "de.ullisroboterseite.ursai2notification.UrsAI2NotificationChannel",
+ "versionName": "2.14.0",
+ "androidMinSdk": "11",
+ "version": "1",
+ "external": "true",
+ "showOnPalette": "true",
+ "providermodel": [],
+ "provider": [],
+ "name": "UrsAI2NotificationChannel",
+ "helpString": "Wrapper for Android Notification.",
+ "properties": [
+  {
+   "defaultValue": "False",
+   "alwaysSend": true,
+   "name": "BypassDnd",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "UrsNotificationChannel",
+   "alwaysSend": true,
+   "name": "ChannelID",
+   "editorArgs": [],
+   "editorType": "text"
+  },
+  {
+   "defaultValue": "Urs Notification Channel",
+   "alwaysSend": true,
+   "name": "ChannelName",
+   "editorArgs": [],
+   "editorType": "text"
+  },
+  {
+   "defaultValue": "",
+   "alwaysSend": true,
+   "name": "Description",
+   "editorArgs": [],
+   "editorType": "text"
+  },
+  {
+   "defaultValue": "default",
+   "alwaysSend": true,
+   "name": "Importance",
+   "editorArgs": [
+    "none",
+    "min",
+    "low",
+    "default",
+    "high"
+   ],
+   "editorType": "choices"
+  },
+  {
+   "defaultValue": "&H00000000",
+   "alwaysSend": true,
+   "name": "LightColor",
+   "editorArgs": [],
+   "editorType": "color"
+  },
+  {
+   "defaultValue": "False",
+   "alwaysSend": true,
+   "name": "LightEnabled",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "none",
+   "alwaysSend": true,
+   "name": "LockscreenVisibility",
+   "editorArgs": [
+    "none",
+    "secret",
+    "private",
+    "public"
+   ],
+   "editorType": "choices"
+  },
+  {
+   "defaultValue": "False",
+   "alwaysSend": true,
+   "name": "ShowBadge",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "alwaysSend": true,
+   "name": "SoundEnabled",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "alwaysSend": true,
+   "name": "VibrationEnabled",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "",
+   "name": "VibrationPattern",
+   "editorArgs": [],
+   "editorType": "textArea"
+  }
+ ],
+ "events": [{
+  "deprecated": "false",
+  "name": "OnNotificationPermissionResponse",
+  "description": "Returns the result of RequestNotificationPermission.",
+  "params": [{
+   "name": "Granted",
+   "type": "boolean"
+  }]
+ }]
+},{
+ "categoryString": "EXTENSION",
+ "dateBuilt": "2025-10-04T19:38:00+0200",
+ "nonVisible": "true",
+ "iconName": "aiwebres/iconintent.png",
+ "methods": [],
+ "blockProperties": [
+  {
+   "rw": "invisible",
+   "deprecated": "false",
+   "name": "ActionType",
+   "description": "Specifies the type of the Intent.",
+   "type": "text",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "ActivityAction",
+   "description": "Specifies the action to be executed.",
+   "type": "text",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "ActivityClass",
+   "description": "Specifies the class part of the specific component that will be started.",
+   "type": "text",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "ActivityPackage",
+   "description": "Specifies the package part of the specific component that will be started.",
+   "type": "text",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "DataType",
+   "description": "The explicit MIME data type.",
+   "type": "text",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "DataUri",
+   "description": "Specifies the data URI that will be used to start the activity.",
+   "type": "text",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "Extras",
+   "description": "The list of key-value pairs that will be passed as extra data to the activity.",
+   "type": "list",
+   "category": "Unspecified"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "FlagClearTask",
+   "description": "Any existing task that would be associated with the activity is cleared before the activity is started.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "FlagClearTop",
+   "description": "If set, and the activity being launched is already running in the current task, then instead of launching a new instance of that activity, all of the other activities on top of it will be closed and this Intent will be delivered to the (now on top) old activity as a new Intent.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "FlagExcludeFromRecents",
+   "description": "The launched activity is not kept in the list of recently launched activities.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "FlagNewTask",
+   "description": "If set, this activity will become the start of a new task on this history stack.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "FlagNoAnimation",
+   "description": "This flag will prevent the system from applying an activity transition animation to go to the next activity state.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "FlagNoHistory",
+   "description": "The launched activity is not kept in the history stack.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "FlagPreviousIsTop",
+   "description": "If set and this intent is being used to launch a new activity from an existing one, the current activity will not be counted as the top activity for deciding whether the new intent should be delivered to the top instead of starting a new one.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "FlagReorderToFront",
+   "description": "This flag will cause the launched activity to be brought to the front of its task's history stack if it is already running.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "FlagResetTaskIfNeeded",
+   "description": "If this activity is either being started in a new task or bringing to the top an existing task, then it will be launched as the front door of the task.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "FlagSingleTop",
+   "description": "the activity will not be launched if it is already running at the top of the history stack.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "FlagTaskOnHome",
+   "description": "This flag will cause a newly launching task to be placed on top of the current home activity task.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "ID",
+   "description": "Specifies ID for Intents of Type 'Event'.",
+   "type": "text",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "ScreenStartValue",
+   "description": "Start value for AI2 apps.",
+   "type": "text",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "ScreenToOpen",
+   "description": "Screen to be openend.",
+   "type": "text",
+   "category": "Behavior"
+  }
+ ],
+ "helpUrl": "https://UllisRoboterSeite.de/android-AI2-notifier.html",
+ "licenseName": "",
+ "type": "de.ullisroboterseite.ursai2notification.UrsIntent",
+ "versionName": "2.14.0",
+ "androidMinSdk": "14",
+ "version": "1",
+ "external": "true",
+ "showOnPalette": "true",
+ "providermodel": [],
+ "provider": [],
+ "name": "UrsIntent",
+ "helpString": "Collection of Intent properties.",
+ "properties": [
+  {
+   "defaultValue": "None",
+   "name": "ActionType",
+   "editorArgs": [
+    "None",
+    "Screen",
+    "Launcher",
+    "Event",
+    "GoBack"
+   ],
+   "editorType": "choices"
+  },
+  {
+   "defaultValue": "",
+   "name": "ActivityAction",
+   "editorArgs": [],
+   "editorType": "string"
+  },
+  {
+   "defaultValue": "",
+   "name": "ActivityClass",
+   "editorArgs": [],
+   "editorType": "string"
+  },
+  {
+   "defaultValue": "",
+   "name": "ActivityPackage",
+   "editorArgs": [],
+   "editorType": "string"
+  },
+  {
+   "defaultValue": "",
+   "name": "DataType",
+   "editorArgs": [],
+   "editorType": "string"
+  },
+  {
+   "defaultValue": "",
+   "name": "DataUri",
+   "editorArgs": [],
+   "editorType": "string"
+  },
+  {
+   "defaultValue": "False",
+   "name": "FlagClearTask",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "name": "FlagClearTop",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "name": "FlagExcludeFromRecents",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "True",
+   "name": "FlagNewTask",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "name": "FlagNoAnimation",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "name": "FlagNoHistory",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "name": "FlagPreviousIsTop",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "name": "FlagReorderToFront",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "name": "FlagResetTaskIfNeeded",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "name": "FlagSingleTop",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "name": "FlagTaskOnHome",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "",
+   "name": "ID",
+   "editorArgs": [],
+   "editorType": "string"
+  },
+  {
+   "defaultValue": "",
+   "name": "ScreenStartValue",
+   "editorArgs": [],
+   "editorType": "string"
+  },
+  {
+   "defaultValue": "Screen1",
+   "name": "ScreenToOpen",
+   "editorArgs": [],
+   "editorType": "string"
+  }
+ ],
+ "events": []
+},{
+ "categoryString": "EXTENSION",
+ "dateBuilt": "2025-10-04T19:38:00+0200",
+ "nonVisible": "true",
+ "iconName": "aiwebres/icon.png",
+ "methods": [
+  {
+   "deprecated": "false",
+   "name": "AddActionButton",
+   "description": "Adds action buttons to the notification.",
+   "params": [
+    {
+     "name": "Title",
+     "type": "text"
+    },
+    {
+     "name": "UrsIntentObject",
+     "type": "component"
+    }
+   ]
+  },
+  {
+   "deprecated": "false",
+   "name": "Cancel",
+   "description": "Cancels the notification.",
+   "params": []
+  },
+  {
+   "deprecated": "false",
+   "name": "Create",
+   "description": "Submits the Notification.",
+   "params": [
+    {
+     "name": "UrsChannelObject",
+     "type": "component"
+    },
+    {
+     "name": "UrsIntentObject",
+     "type": "component"
+    }
+   ]
+  },
+  {
+   "deprecated": "false",
+   "name": "RemoveActionButtons",
+   "description": "Removes all action buttons.",
+   "params": []
+  },
+  {
+   "deprecated": "false",
+   "name": "RemoveOnDestroyAction",
+   "description": "Removes the OnDestroyAction.",
+   "params": []
+  },
+  {
+   "deprecated": "false",
+   "name": "RemoveProgressBar",
+   "description": "Remove the notification progress bar.",
+   "params": []
+  },
+  {
+   "deprecated": "false",
+   "name": "RemoveProgressBarEx",
+   "description": "Remove the notification progress bar.",
+   "params": [
+    {
+     "name": "Title",
+     "type": "text"
+    },
+    {
+     "name": "Text",
+     "type": "text"
+    }
+   ]
+  },
+  {
+   "deprecated": "false",
+   "name": "SetOnDestroyAction",
+   "description": "Defines the replacemant for the notification when the Screen is destroyed.",
+   "params": [
+    {
+     "name": "UrsChannelObject",
+     "type": "component"
+    },
+    {
+     "name": "UrsNotificationObject",
+     "type": "component"
+    },
+    {
+     "name": "UrsIntentObject",
+     "type": "component"
+    }
+   ]
+  },
+  {
+   "deprecated": "false",
+   "name": "SetProgress",
+   "description": "Adjust the notification progress bar.",
+   "params": [{
+    "name": "CurrentProgress",
+    "type": "number"
+   }]
+  },
+  {
+   "deprecated": "false",
+   "name": "SetProgressEx",
+   "description": "Adjust the notification progress bar.",
+   "params": [
+    {
+     "name": "Title",
+     "type": "text"
+    },
+    {
+     "name": "Text",
+     "type": "text"
+    },
+    {
+     "name": "CurrentProgress",
+     "type": "number"
+    }
+   ]
+  }
+ ],
+ "blockProperties": [
+  {
+   "rw": "read-only",
+   "deprecated": "false",
+   "name": "AreNotificationsEnabled",
+   "description": "Returns whether notifications are enabled for this app.",
+   "type": "boolean",
+   "category": "Unspecified"
+  },
+  {
+   "rw": "read-only",
+   "deprecated": "false",
+   "name": "AreNotificationsPaused",
+   "description": "Returns whether notifications are paused for this app.",
+   "type": "boolean",
+   "category": "Unspecified"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "AutoCancel",
+   "description": "The notification is automatically canceled when the user clicks it in the panel.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "BigPicture",
+   "description": "Provides the bitmap to be used as the payload for the BigPicture notification.",
+   "type": "text",
+   "category": "Appearance"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "CancelOnDestroy",
+   "description": "The notification is automatically canceled when the app is destroyed.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "alwaysSend": true,
+   "defaultValue": "&H00000000",
+   "deprecated": "false",
+   "name": "Color",
+   "description": "Accent color to be applied to this notification.",
+   "type": "number",
+   "category": "Appearance"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "Colorized",
+   "description": "The color set with Color will be used as the background color of this notification.",
+   "type": "boolean",
+   "category": "Appearance"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "IsInsistent",
+   "description": "The audio will be repeated until the notification is cancelled or the notification window is opened.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "IsOngoingEvent",
+   "description": "This notification is in reference to something that is ongoing, like a phone call.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "LargeIcon",
+   "description": "Adds a large icon to the notification content view.",
+   "type": "text",
+   "category": "Appearance"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "NoClear",
+   "description": "The notification should not be canceled when the user clicks the Clear all button.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "invisible",
+   "deprecated": "false",
+   "name": "NumberID",
+   "description": "An identifier for this notification unique within the application.",
+   "type": "number",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "OnlyAlertOnce",
+   "description": "Sound, vibration and ticker should only be played if the notification has not already been displayed.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "SmallIconImage",
+   "description": "The small icon representing this notification in the status bar and content view.",
+   "type": "text",
+   "category": "Appearance"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "SmallSystemIcon",
+   "description": "The small icon representing this notification in the status bar and content view.",
+   "type": "text",
+   "category": "Appearance"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "Text",
+   "description": "The second line of text.",
+   "type": "text",
+   "category": "Appearance"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "Title",
+   "description": "The first bold line of text.",
+   "type": "text",
+   "category": "Appearance"
+  },
+  {
+   "rw": "read-only",
+   "deprecated": "false",
+   "name": "VersionSDK",
+   "description": "The SDK version of the software currently running on this hardware device.",
+   "type": "number",
+   "category": "Unspecified"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "When",
+   "description": "Adds a timestamp pertaining to the notification.",
+   "type": "number",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "WhenChronometerCountDown",
+   "description": "Sets the Chronometer to count down instead of counting up.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "WhenEnabled",
+   "description": "Controls whether the timestamp set with setWhen is shown in the content view.",
+   "type": "boolean",
+   "category": "Behavior"
+  },
+  {
+   "rw": "read-write",
+   "deprecated": "false",
+   "name": "WhenUsesChronometer",
+   "description": "Shows the Notification#when field as a stopwatch.",
+   "type": "boolean",
+   "category": "Behavior"
+  }
+ ],
+ "helpUrl": "https://UllisRoboterSeite.de/android-AI2-notifier.html",
+ "licenseName": "",
+ "type": "de.ullisroboterseite.ursai2notification.UrsNotification",
+ "versionName": "2.14.0",
+ "androidMinSdk": "14",
+ "version": "1",
+ "external": "true",
+ "showOnPalette": "true",
+ "providermodel": [],
+ "provider": [],
+ "name": "UrsNotification",
+ "helpString": "Collection of notification properties.",
+ "properties": [
+  {
+   "defaultValue": "False",
+   "name": "AutoCancel",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "",
+   "name": "BigPicture",
+   "editorArgs": [],
+   "editorType": "asset"
+  },
+  {
+   "defaultValue": "False",
+   "name": "CancelOnDestroy",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "&H00000000",
+   "alwaysSend": true,
+   "name": "Color",
+   "editorArgs": [],
+   "editorType": "color"
+  },
+  {
+   "defaultValue": "False",
+   "name": "Colorized",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "name": "IsInsistent",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "name": "IsOngoingEvent",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "",
+   "name": "LargeIcon",
+   "editorArgs": [],
+   "editorType": "asset"
+  },
+  {
+   "defaultValue": "False",
+   "name": "NoClear",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "1",
+   "name": "NumberID",
+   "editorArgs": [],
+   "editorType": "non_negative_integer"
+  },
+  {
+   "defaultValue": "False",
+   "name": "OnlyAlertOnce",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "",
+   "name": "SmallIconImage",
+   "editorArgs": [],
+   "editorType": "asset"
+  },
+  {
+   "defaultValue": "ic_launcher",
+   "name": "SmallSystemIcon",
+   "editorArgs": [],
+   "editorType": "string"
+  },
+  {
+   "defaultValue": "",
+   "name": "Text",
+   "editorArgs": [],
+   "editorType": "string"
+  },
+  {
+   "defaultValue": "",
+   "name": "Title",
+   "editorArgs": [],
+   "editorType": "string"
+  },
+  {
+   "defaultValue": "0",
+   "name": "When",
+   "editorArgs": [],
+   "editorType": "non_negative_integer"
+  },
+  {
+   "defaultValue": "False",
+   "name": "WhenChronometerCountDown",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "name": "WhenEnabled",
+   "editorArgs": [],
+   "editorType": "boolean"
+  },
+  {
+   "defaultValue": "False",
+   "name": "WhenUsesChronometer",
+   "editorArgs": [],
+   "editorType": "boolean"
+  }
+ ],
+ "events": [
+  {
+   "deprecated": "false",
+   "name": "OnClick",
+   "description": "The notification or an action button was clicked by the user.",
+   "params": [{
+    "name": "IntentID",
+    "type": "text"
+   }]
+  },
+  {
+   "deprecated": "false",
+   "name": "OnNewIntent",
+   "description": "The notification or an action button was clicked by the user.",
+   "params": [
+    {
+     "name": "IntentID",
+     "type": "text"
+    },
+    {
+     "name": "StartValue",
+     "type": "text"
+    }
+   ]
+  },
+  {
+   "deprecated": "false",
+   "name": "UserCanceled",
+   "description": "Notification was canceled by the user.",
+   "params": []
+  }
+ ]
+}]

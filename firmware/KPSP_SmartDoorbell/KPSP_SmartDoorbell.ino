@@ -37,6 +37,8 @@
 #define HREF_GPIO_NUM     23
 #define PCLK_GPIO_NUM     22
 
+#define DOORBELL_KEY "KPSPNSC323"
+
 httpd_handle_t stream_httpd = NULL;
 
 // ==========================================
@@ -186,18 +188,30 @@ static esp_err_t audio_handler(httpd_req_t *req) {
 
 unsigned long solenoidUnlockTime = 0;
 bool solenoidActive = false;
+unsigned long pirLastTrigger = 0;
 
 // A. Remote Unlock Handler (Triggered by pressing "Unlock" in the App)
 static esp_err_t open_handler(httpd_req_t *req) {
   Serial.println("[App Command] OPEN Door Lock request received.");
+
+  char buf[64], key[33];
+  bool ok = (httpd_req_get_url_query_str(req, buf, sizeof(buf)) == ESP_OK) &&
+            (httpd_query_key_value(buf, "key", key, sizeof(key)) == ESP_OK) &&
+            (strcmp(key, DOORBELL_KEY) == 0);
+  if (!ok) {
+    httpd_resp_set_status(req, "403 Forbidden");
+    httpd_resp_send(req, "Forbidden", -1);
+    return ESP_OK;
+  }
   
   httpd_resp_set_hdr(req, "Access-Control-Allow-Origin", "*");
   httpd_resp_send(req, "Door Opened", -1);
 
   // Play a quick success chirp on the buzzer
-  tone(BUZZER_LED_PIN, 2000, 2000);
-  delay(120);
-  tone(BUZZER_LED_PIN, 2500, 2500);
+  // in open_handler, replace the tone calls:
+  tone(BUZZER_LED_PIN, 2000, 120);
+  delay(150);
+  tone(BUZZER_LED_PIN, 2500, 150);
 
   // Pulse Solenoid open for 3 seconds
   digitalWrite(SOLENOID_PIN, HIGH);
@@ -330,23 +344,18 @@ void setup() {
 }
 
 void loop() {
-  // Asynchronous background web server operates independently.
-  // loop() handles physical visitor doorbell pushes / PIR triggers.
-  if (solenoidActive && (millis() - solenoidUnlockTime >= 3000)) {
+  unsigned long now = millis();
+  
+  // Non-blocking solenoid pulse auto-off (3 seconds)
+  if (solenoidActive && (now - solenoidUnlockTime >= 3000)) {
     digitalWrite(SOLENOID_PIN, LOW);
     solenoidActive = false;
   }
-  
-  if (digitalRead(PIR_PIN) == HIGH) {
-    Serial.println("[PIR Event] Motion detected near door! Chiming...");
-    
-    // Play a polite, real "Ding-Dong" chime instead of a continuous screeching buzz
-    tone(BUZZER_LED_PIN, 660, 400); // Play Note E5
-    delay(450);
-    tone(BUZZER_LED_PIN, 550, 600); // Play Note C#5
-    
-    // 5-second cooldown to avoid continuous double-triggers
-    delay(5000); 
+  // Non-blocking PIR local chime (6-second cooldown)
+  if (digitalRead(PIR_PIN) == HIGH && (now - pirLastTrigger > 6000)) {
+    pirLastTrigger = now;
+    Serial.println("[PIR] Motion!");
+    tone(BUZZER_LED_PIN, 660, 400);   // tone() with duration is non-blocking
   }
-  delay(100);
+  delay(50);
 }

@@ -184,6 +184,9 @@ static esp_err_t audio_handler(httpd_req_t *req) {
 // 4. KODULAR APP ENDPOINTS (NEW / RESTORED)
 // ==========================================
 
+unsigned long solenoidUnlockTime = 0;
+bool solenoidActive = false;
+
 // A. Remote Unlock Handler (Triggered by pressing "Unlock" in the App)
 static esp_err_t open_handler(httpd_req_t *req) {
   Serial.println("[App Command] OPEN Door Lock request received.");
@@ -192,14 +195,14 @@ static esp_err_t open_handler(httpd_req_t *req) {
   httpd_resp_send(req, "Door Opened", -1);
 
   // Play a quick success chirp on the buzzer
-  tone(BUZZER_LED_PIN, 2000, 100);
+  tone(BUZZER_LED_PIN, 2000, 2000);
   delay(120);
-  tone(BUZZER_LED_PIN, 2500, 150);
+  tone(BUZZER_LED_PIN, 2500, 2500);
 
   // Pulse Solenoid open for 3 seconds
   digitalWrite(SOLENOID_PIN, HIGH);
-  delay(3000); 
-  digitalWrite(SOLENOID_PIN, LOW);
+  solenoidUnlockTime = millis();
+  solenoidActive = true;
 
   return ESP_OK;
 }
@@ -329,6 +332,11 @@ void setup() {
 void loop() {
   // Asynchronous background web server operates independently.
   // loop() handles physical visitor doorbell pushes / PIR triggers.
+  if (solenoidActive && (millis() - solenoidUnlockTime >= 3000)) {
+    digitalWrite(SOLENOID_PIN, LOW);
+    solenoidActive = false;
+  }
+  
   if (digitalRead(PIR_PIN) == HIGH) {
     Serial.println("[PIR Event] Motion detected near door! Chiming...");
     
